@@ -81,7 +81,7 @@ class DecompressorWindow(SimpleWindow):
         input = self.input.textbox.text()
         output = self.output.textbox.text()
         offset = int(self.offset.textbox.text(), 16)
-        self.callback_decompressor(offset, input, output, self.selected_codec)
+        self.callback_decompressor(input, output, self.selected_codec, offset)
 
 
 class MultiDecompressorWindow(SimpleWindow):
@@ -167,7 +167,7 @@ class MultiDecompressorWindow(SimpleWindow):
         output = self.output.textbox.text()
         offset = int(self.offset.textbox.text(), 16)
         codec = self.codec.dropdown.currentText()
-        self.callback_decompressor(offset, input, output, codec)
+        self.callback_decompressor(input, output, codec, offset)
 
 
 class MultiDecompressorWithTileViewerWindow(SimpleWindow):
@@ -254,7 +254,7 @@ class MultiDecompressorWithTileViewerWindow(SimpleWindow):
         output = self.output.textbox.text()
         offset = int(self.offset.textbox.text(), 16)
         codec = self.codec.dropdown.currentText()
-        self.callback_decompressor(offset, input, output, codec)
+        self.callback_decompressor(input, output, codec, offset)
         self.render_preview()
 
     def render_preview(self):
